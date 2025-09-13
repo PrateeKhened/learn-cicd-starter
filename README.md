@@ -1,6 +1,6 @@
 # learn-cicd-starter (Notely)
 
-https://github.com/PrateeKhened/learn-cicd-starter/actions/workflows/ci.yml/badge.svg
+![tests passed](https://github.com/PrateeKhened/learn-cicd-starter/actions/workflows/ci.yml/badge.svg)
 
 suresh's version of Boot.dev's Notely app.
 
