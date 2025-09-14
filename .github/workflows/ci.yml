@@ -20,6 +20,12 @@ jobs:
 
       - name: Run the tests for the code
         run: go test ./... -cover
+      
+      - name: Install gosec
+        run: go install github.com/securego/gosec/v2/cmd/gosec@latest
+      
+      - name: Run the security scan
+        run: gosec ./...
 
   style:
     name: Style 
