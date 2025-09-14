@@ -100,8 +100,8 @@ func TestGetAPIKey(t *testing.T) {
 			expectedError: errors.New("malformed authorization header"),
 		},
 		{
-			name: "nil headers",
-			headers: nil,
+			name:          "nil headers",
+			headers:       nil,
 			expectedKey:   "",
 			expectedError: ErrNoAuthHeaderIncluded,
 		},
