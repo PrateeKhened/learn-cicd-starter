@@ -20,3 +20,19 @@ jobs:
 
       - name: build the binary code 
         run: ./scripts/buildprod.sh
+
+      - id: auth
+        uses: 'google-github-actions/auth@v2'
+        with:
+          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
+
+      - name: Set up Cloud SDK
+        uses: 'google-github-actions/setup-gcloud@v3'
+        with:
+          version: '>= 363.0.0'
+        
+      - name: Build the docker image
+        run: docker build -t prateekkhenedcodes553/notely:latest .
+      
+      - name: Push the docker image to the gcp artifact registry
+        run: gcloud builds submit --tag  asia-south1-docker.pkg.dev/notely-472105/notely-ar-repo/prateekkhenedcodes553/notely:latest
